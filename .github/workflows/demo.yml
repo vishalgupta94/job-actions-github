@@ -30,13 +30,17 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dist-build
-          path: |
-            dist
-            package-lock2.json
+          path: dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: gEt code
+        uses: actions/download-artifact@v2
+        with:
+          name: dist-build
+      - name: Output files
+        run : ls
       - name: Deploy
         run: echo "Deploying..."
