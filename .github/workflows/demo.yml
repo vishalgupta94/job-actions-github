@@ -32,7 +32,7 @@ jobs:
           name: dist-build
           path: |
             dist
-            package-lock.json
+            package-lock2.json
 
   deploy:
     needs: build
